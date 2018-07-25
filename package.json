@@ -1,10 +1,11 @@
 {
   "name": "callstats-jssip-demo",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "DEBUG=* npm start"
+    "start": "npm run generatecertificate && node ./bin/www",
+    "dev": "DEBUG=* npm start",
+    "generatecertificate": "mkdir -p ssl && cd ssl && openssl req -new -newkey rsa:2048 -days 365 -nodes -x509 -keyout server.key -out server.crt -passin pass:v2ZIZj2jKUap -subj '/CN=localhost/O=Local/C=FI' && cp server.crt ca.crt"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
