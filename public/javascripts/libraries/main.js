@@ -53,7 +53,7 @@ btnLogin.addEventListener('click', () => {
         sockets: [socket],
         uri: 'sip:'+ localUser.value +'@' + domain,
         authorization_user: localUser.value,
-        password: 12345
+        password: SIP_USER_PASSWORD
     }
 
     ua = new JsSIP.UA(configuration)
