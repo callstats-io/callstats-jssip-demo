@@ -1,0 +1,21 @@
+{
+  "name": "callstats-jssip-demo",
+  "description": "",
+  "main": "",
+  "authors": [
+    "pallab-gain <pallab@callstats.io>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/callstats-io/callstats-jssip-demo",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jssip": "3.2.11"
+  }
+}
