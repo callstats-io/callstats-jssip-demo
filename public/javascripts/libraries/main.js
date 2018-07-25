@@ -25,19 +25,16 @@ function doHash(str) {
 };
 
 // Get a custom conference ID based
-function getConferenceID(callback) {
+function getConferenceID() {
     if( !(session &&
         session._remote_identity && session._remote_identity._uri && session._remote_identity._uri._user &&
         session._ua && session._ua._configuration && session._ua._configuration.authorization_user )){
         return null;
     }
-    // setTimeout( _=> {
-        let tags = [session._remote_identity._uri._user, session._ua._configuration.authorization_user];
-        tags.sort();
-        const hashValue = 'jssip-'+doHash(tags.join(''));
-        callback(hashValue);
-    // }, 3*1000);
-
+    let tags = [session._remote_identity._uri._user, session._ua._configuration.authorization_user];
+    tags.sort();
+    const hashValue = 'jssip-'+doHash(tags.join(''));
+    return hashValue;
 }
 
 //change this ip to your asterisk server
@@ -71,12 +68,11 @@ btnLogin.addEventListener('click', () => {
     ua.on('newRTCSession', function (e) {
         console.log('newRTCSession', e);
         session = e.session;
-        getConferenceID(function(customConferenceID){
-            if(customConferenceID) {
-                console.log('changing conference id to -> ',customConferenceID);
-                session.data.conferenceID = customConferenceID;
-            }
-        });
+        const customConferenceID = getConferenceID();
+        if(customConferenceID) {
+            console.log('changing conference id to -> ', customConferenceID);
+            session.data.conferenceID = customConferenceID;
+        }
 
         if(e.originator === 'remote') {
             session.answer()
