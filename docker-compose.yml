@@ -4,7 +4,7 @@ services:
   # CSIO JsSIP SHIM with demo application
   #########################
 
-  twilio-video-shim-demo:
+  jssip-shim-demo:
     build:
       context: ./../callstats-jssip-demo
     environment:
