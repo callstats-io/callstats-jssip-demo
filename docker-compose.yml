@@ -1,7 +1,7 @@
 version: '2'
 services:
   #########################
-  # CSIO Twilio video SHIM demo application
+  # CSIO JsSIP SHIM with demo application
   #########################
 
   twilio-video-shim-demo:
