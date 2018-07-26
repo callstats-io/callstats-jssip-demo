@@ -33,7 +33,7 @@ function getConferenceID() {
     }
     let tags = [session._remote_identity._uri._user, session._ua._configuration.authorization_user];
     tags.sort();
-    const hashValue = 'jssip-'+doHash(tags.join(''));
+    const hashValue = 'jssip-'+Math.round(Math.random()*100)+":"+doHash(tags.join(''));
     return hashValue;
 }
 
