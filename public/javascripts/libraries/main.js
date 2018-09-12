@@ -38,20 +38,23 @@ function getConferenceID() {
 }
 
 //change this ip to your asterisk server
-const domain = ASTERISK_SERVER
+const domain = ASTERISK_SERVER;
 
 //button events
 
 btnLogin.addEventListener('click', () => {
     // Create our JsSIP instance and run it:
 
+    let userName = localUser.value.split(':')[0];
+    let password = localUser.value.split(':')[1];
+
     var socket = new JsSIP.WebSocketInterface('wss://' + domain + ':8443/ws')
     var configuration = {
         sockets: [socket],
-        uri: 'sip:'+ localUser.value +'@' + domain,
-        authorization_user: localUser.value,
-        password: SIP_USER_PASSWORD
-    }
+        uri: 'sip:'+ userName +'@' + domain,
+        authorization_user: userName,
+        password: password
+    };
 
     ua = new JsSIP.UA(configuration)
 
