@@ -15,7 +15,17 @@ To run the app, we will need NodeJS and a SIP server. In this example we use Ast
     npm install
     bower install    
     ```
-- 3 Run the demo
+    
+- 3 Provide environments variables either from terminal, or by .env file
+    
+    ```
+          $ ASTERISK_SERVER=csio.testasterisk.io &\ 
+             CSIO_APP_ID=81762635 &\ 
+             CSIO_APP_SECRET=1213kj1khjkadsghjagsd871 &\
+             PORT=9091
+    ```
+          
+- 4 Run the demo
     
     Fill .env file with right credentials
         
