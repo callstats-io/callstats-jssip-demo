@@ -16,6 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "jssip": "3.2.11"
+    "jssip": "*"
   }
 }
