@@ -94,5 +94,5 @@ function onError(error) {
 
 function onListening() {
   var addr = server.address();
-  debug(`Server is listening on https://0.0.0.0:${addr.port}`);
+  console.log(`Server is listening on https://0.0.0.0:${addr.port}`);
 }

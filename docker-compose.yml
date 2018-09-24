@@ -9,10 +9,9 @@ services:
       context: ./../callstats-jssip-demo
     environment:
       ASTERISK_SERVER : ''
-      SIP_USER_PASSWORD : ''
       CSIO_APP_ID : ''
       CSIO_APP_SECRET : ''
-      PORT: '9090'
+      PORT : '9090'
     ports:
       - "9090:9090"
     command: "npm start"
